@@ -15,6 +15,7 @@ var app = express.createServer();
 nunt.init({
     server: app,
     load: [__dirname + "/logic"],
+    fakeServer: true,
     silent: true
 });
 
