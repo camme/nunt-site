@@ -1,5 +1,5 @@
 {
-    "name": "Nunt Site",
+    "name": "nunt-site",
     "description": "The documentation and example site for nunt",
     "tags": ["web", "socketio", "event", "javascript", "nunt"],
     "version": "0.4",
