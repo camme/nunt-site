@@ -1,0 +1,24 @@
+{
+    "name": "Nunt Site",
+    "description": "The documentation and example site for nunt",
+    "tags": ["web", "socketio", "event", "javascript", "nunt"],
+    "version": "0.4",
+    "author": "camilo tapia <camilo.tapia@gmail.com>",
+    "repository":
+    {
+		"type": "git",
+		"url": "https://github.com/Camme/nunt-site.git"
+    },
+    "bugs":
+    {
+		"url": "https://github.com/Camme/nunt-site/issues"
+    },
+    "engines": ["node"],
+    "dependencies":{
+        "everyauth": "~0.3.1",
+        "express": "~3.0.3",
+        "moment": "~1.7.2",
+        "nunt": "~1.3.1",
+        "socket.io": "~0.9.11"
+    }
+}
