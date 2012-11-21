@@ -28,5 +28,15 @@ section{padding-top:50px}
 .logo .part4{width:49.95px;height:49.95px;border-top:24.975px solid #888;border-left:24.975px solid #888;float:left}
 .header p,header p{clear:left}
 .header .subhead,header .subhead{font-size:.75em;padding-top:40px}
-.mouseDot{position:absolute;top:35px;opacity:.3;left:0;width:15px;height:15px;transition:left .2s;-moz-transition:left .2s;-webkit-transition:left .2s;-o-transition:left .2s;}
+.mouseDot{position:absolute;top:35px;left:0;width:15px;height:15px;transition:left .2s;-moz-transition:left .2s;-webkit-transition:left .2s;-o-transition:left .2s;}
+.mouseDot:hover .innerDot .info{display:block}
+.mouseDot .innerDot{position:relative;}
+.mouseDot .innerDot .info{display:none;position:absolute;top:15px;background-color:#333;padding:2px 5px 0;min-width:200px;max-width:300px;border:3px #111 solid;color:#fff;left:35px}
+.italic{font-style:italic;color:#999}
+#canvas1{overflow:hidden}
 .clientDot{position:absolute;top:500px;opacity:.3;left:10px;width:15px;height:15px;transition:top 5s;-moz-transition:top 5s;-webkit-transition:top 5s;-o-transition:top 5s;}
+@media (max-width: 979px){body{padding-top:0}
+.navbar .nav > li{float:left}
+.navbar .nav{clear:left}
+.navbar .brand{margin-left:5px}
+}

@@ -5,26 +5,31 @@
 
 // the event framework
 var nunt = require('nunt');
-var config = require("./config").config;
+var settings = require('./settings');
+var everyauth = require('everyauth');
+var config = settings.config;
 var path = require("path");
 var fs = require('fs');
+var http = require('http');
 var express = require('express');
-var app = express.createServer();
+var app = express();
+var server = http.createServer(app);
+
+var ts  = require('./lib/twitter-stats.js');
 
 // init nunt
 nunt.init({
-    server: app,
+    server: server,
     load: [__dirname + "/logic"],
-    fakeServer: true,
+    fakeSocket: true,
     silent: true
 });
 
-
 app.configure(function(){
+    app.use(nunt.middleware());
     app.use(express.bodyParser());
     app.use(express.cookieParser());
     app.use(express.methodOverride());
-    app.use(nunt.middleware());
     app.use(express.session({ secret:'whodunnit' }));
     app.use(
         require('stylus').middleware({
@@ -34,12 +39,13 @@ app.configure(function(){
             dest: __dirname + "/public"
         })
     );
-    app.use(app.router);
     app.use(express.static(__dirname + '/public'));
+    app.use(app.router);
+    app.use(everyauth.middleware());
 });
 
 // connect the socket server
-app.listen(config.server.port);
+server.listen(config.server.port);
 
 nunt.on("client.mouse", function(e) {
     nunt.send("client.mouse.move", { clientId: e.sessionId.substring(0, 10), mouse: {x: e.x, y: e.y} } );

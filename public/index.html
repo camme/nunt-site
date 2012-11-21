@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title></title>
         <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/lib/raphael-min.js"></script>
         <script src="/nunt/nunt.js" type="text/javascript"></script>
         <script src="/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
         <script src="/js/lib/bootstrap.min.js" type="text/javascript"></script>
@@ -122,7 +123,9 @@ nunt.send("foo", {message: "bar"});
                         </div>
                         <div class="row moreSpace">
                             <div class="span6">
-                                <img src="img/temp.png" style="width: 100%" alt="temp" />
+                                <div id="canvas1"></div>
+                                <p class="italic">The circles get their width from the amount of current tweets with the hashtags #nodejs, #javascript or #unicorn</p>
+                                <!--<img src="img/temp.png" style="width: 100%" alt="temp" />-->
                             </div>
                             <div class="span6">
                                     <h3>What is an event?</h3>

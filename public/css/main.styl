@@ -110,7 +110,7 @@ logo($logoWidth, $color1, $color2)
 .mouseDot
     position absolute
     top 35px
-    opacity .3
+    //opacity .3
     left 0px
     width 15px
     height 15px
@@ -118,6 +118,33 @@ logo($logoWidth, $color1, $color2)
     -moz-transition: left .2s; /* Firefox 4 */
     -webkit-transition: left .2s; /* Safari and Chrome */
     -o-transition: left .2s; /* Opera */
+
+    &:hover .innerDot .info
+        display block
+
+
+    .innerDot
+        position relative
+
+        .info
+            display none
+            position absolute
+            top 15px
+            background-color #333
+            padding 2px 5px 0px
+            min-width 200px
+            max-width 300px
+            border 3px #111 solid
+            color white
+            left 35px
+
+.italic
+    font-style italic
+    color #999
+
+#canvas1
+    overflow hidden
+    //width 570px
 
 .clientDot
     position absolute
@@ -130,4 +157,17 @@ logo($logoWidth, $color1, $color2)
     -moz-transition: top 5s; /* Firefox 4 */
     -webkit-transition: top 5s; /* Safari and Chrome */
     -o-transition: top 5s; /* Opera */
+
+@media (max-width: 979px)
+    body
+        padding-top 0
+
+    .navbar .nav > li
+        float left
+
+    .navbar .nav 
+        clear left
+
+    .navbar .brand
+        margin-left 5px
 
